@@ -1,0 +1,145 @@
+/* ============================================================
+   PHONE MOCKUP — NEW SYNCED VERSION (matches PhonePlayer.jsx)
+============================================================ */
+
+/* Wrapper */
+.phone-frame-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+/* Outer iPhone Frame */
+.phone-frame {
+  width: 360px;
+  height: 760px;
+  background: linear-gradient(180deg, #f5f6fb, #dde3f3);
+  border-radius: 46px;
+  padding: 18px;
+  box-shadow:
+    0 28px 60px rgba(0,0,0,0.28),
+    inset 0 2px 4px rgba(255,255,255,0.55);
+  position: relative;
+}
+
+/* Side Buttons */
+.phone-side {
+  position: absolute;
+  width: 6px;
+  height: 90px;
+  background: rgba(0,0,0,0.12);
+  border-radius: 5px;
+  top: 140px;
+}
+.phone-side.left { left: -8px; }
+.phone-side.right { right: -8px; }
+
+/* Notch */
+.phone-notch {
+  width: 80%;
+  height: 36px;
+  margin: 0 auto 8px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+.phone-notch-camera {
+  width: 13px;
+  height: 13px;
+  background: #000;
+  border-radius: 50%;
+}
+.phone-notch-speaker {
+  width: 58%;
+  height: 7px;
+  background: #222;
+  border-radius: 999px;
+}
+
+/* Screen Container */
+.phone-content {
+  width: 100%;
+  height: calc(100% - 100px);
+  background: #000;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Scrollable area */
+.phone-inner {
+  height: 100%;
+  overflow-y: auto;
+}
+.phone-inner::-webkit-scrollbar { display: none; }
+
+/* Home Bar */
+.phone-bar {
+  width: 130px;
+  height: 7px;
+  background: rgba(255,255,255,0.15);
+  border-radius: 999px;
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ============================================================
+   TEXT, CARD & PLAYER FIX — ONLY INSIDE PHONE
+============================================================ */
+.phone-content,
+.phone-content * {
+  color: #fff !important;
+}
+
+/* Card inside phone */
+.phone-content .card {
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff !important;
+}
+
+/* Player image */
+.phone-content img {
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.45);
+}
+
+/* Player buttons */
+.phone-content button {
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+
+/* Progress bar */
+.phone-content .progress-bg {
+  background: rgba(255,255,255,0.25) !important;
+}
+.phone-content .progress-bar {
+  background: linear-gradient(90deg,#7c3aed,#06b6d4) !important;
+}
+
+/* ============================================================
+   SMOOTH FADE ANIMATION
+============================================================ */
+.phone-inner > * {
+  animation: fadeInPhone .55s ease both;
+}
+
+@keyframes fadeInPhone {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile small fix */
+@media (max-width: 480px) {
+  .phone-frame {
+    width: 310px;
+    height: 680px;
+  }
+}

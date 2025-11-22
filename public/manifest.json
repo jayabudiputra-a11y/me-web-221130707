@@ -1,0 +1,25 @@
+{
+  "short_name": "React App",
+  "name": "Remedial Perancangan Web",
+  "icons": [
+    {
+      "src": "a-modern-web-icon-featuring-a-stylized-globe-with-.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "an-open-book-icon-with-flowing-curved-pages--elega.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "flat-ui-globe-icon-with-thin-geometric-grid-lines-.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,147 @@
+/* ===============================
+   TAILWIND BASE
+================================*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ===============================
+   GLOBAL RESET & SMOOTHING
+================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+/* ===============================
+   MODERN PLAYER RESPONSIVE
+================================*/
+@media (max-width: 768px) {
+  .modern-player .controls {
+    gap: 1rem !important;
+  }
+
+  .modern-player button svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+}
+
+
+/* ===============================
+   BLOCKQUOTE / QUOTE DESIGN
+================================*/
+
+/* Container */
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 2rem 3rem;
+  overflow: visible; /* penting untuk kutip kanan */
+}
+
+/* Left gradient bar */
+blockquote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(180deg, #6366f1, #a855f7);
+  border-radius: 999px;
+}
+
+/* Main paragraph styling */
+blockquote p {
+  position: relative;
+  z-index: 10;
+  margin: 0;
+}
+
+/* Left quote mark */
+blockquote p::before {
+  content: "“";
+  font-size: 3rem;
+  position: absolute;
+  top: -18px;
+  left: -28px;
+  opacity: 0.22;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Right quote — di UJUNG KANAN */
+blockquote p::after {
+  content: "”";
+  font-size: 3rem;
+  position: absolute;
+  bottom: -18px;
+  right: -48px; /* posisi EXACT ujung kanan */
+  opacity: 0.22;
+  font-weight: bold;
+  line-height: 1;
+  transform: rotate(180deg);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  blockquote {
+    padding: 1.5rem 2rem;
+  }
+
+  blockquote p {
+    font-size: 1.1rem !important;
+  }
+
+  blockquote p::before,
+  blockquote p::after {
+    font-size: 2.4rem;
+  }
+
+  blockquote p::after {
+    right: -36px;
+  }
+}
+
+
+/* ===============================
+   GLASS EFFECT
+================================*/
+.card-glass {
+  overflow: visible !important; /* HARUS AGAR KUTIP KANAN TIDAK HILANG */
+}
+
+.card-glass blockquote {
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.10),
+    rgba(255,255,255,0.05)
+  );
+  border-radius: 1rem;
+  backdrop-filter: blur(6px);
+  padding: 2rem 3rem !important;
+}
